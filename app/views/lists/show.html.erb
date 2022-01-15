@@ -1,7 +1,10 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
-
-  <h2><%= @list.name %></h2>
-  <%= @list.movies.count %>
-<%= link_to "add a movie",  new_list_bookmark_path(@list) %>
-
+<div class="jumbotron jumbotron-fluid" style="background-image:url(<%= @list.movies.sample.poster_url %>);">
+</div>
+<div class="container">
+  <div class="list-title h4">
+    <%=  @list.name %>
+  </div>
+  <p class="lead">
+    <%= @list.movies.count %> movies
+  </p>
+</div>

@@ -12,7 +12,14 @@
   </head>
 
   <body>
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-light py-2">
+        <%= link_to lists_path, class: "h2" do %>
+          <i class="fas fa-film"></i>
+          Cinema
+        <% end %>
+      </a>
+    </nav>
     <%= yield %>
   </body>
 </html>
-  
