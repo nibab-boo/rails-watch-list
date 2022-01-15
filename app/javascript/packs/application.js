@@ -14,4 +14,4 @@ ActiveStorage.start()
 
 import 'bootstrap';
 
-alert("Js working!")
+// alert("Js working!")
