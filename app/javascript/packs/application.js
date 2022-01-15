@@ -13,3 +13,5 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import 'bootstrap';
+
+alert("Js working!")
