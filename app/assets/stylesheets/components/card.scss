@@ -1,0 +1,30 @@
+.card {
+  margin: 32px;
+}
+
+.image-box {
+  height: 300px;
+  position: relative;
+  perspective: 400px;
+  .image {
+    height: 100%; object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transition: transform .3s;
+  }
+  &:hover {
+    .image {
+      box-shadow: 0 0 8px 1px rgb(83, 82, 82);
+      transform: rotateY(-20deg) translateX(-8px);
+    }
+    .image:nth-child(1) {
+      transform: rotateY(-20deg) translateX(60px) scaleY(1.05);
+      
+    }
+    .image:nth-child(2) {
+      transform: rotateY(-20deg) translateX(26px) scaleY(1.02);
+    }
+  } 
+}

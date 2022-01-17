@@ -12,5 +12,13 @@
   line-height: 120px;
   margin: 0 auto;
   border-radius: 50%;
+  opacity: .4;
   background-color: rebeccapurple;
+  background: linear-gradient(145deg, rgb(177, 180, 189), rgb(149, 151, 159));
+  box-shadow:  5px 5px 29px rgb(120, 123, 129),
+               -5px -5px 29px rgb(210, 213, 225);
+}
+
+.list-title:hover {
+  opacity: .9;
 }
