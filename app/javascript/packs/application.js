@@ -13,5 +13,9 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import 'bootstrap';
+import { circularButtonEffect } from '../components/_index';
 
-// alert("Js working!")
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  circularButtonEffect();
+});

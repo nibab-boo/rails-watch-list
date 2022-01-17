@@ -5,11 +5,13 @@
       <div class="col-6 col-md-4  my-5">
         <div class="card border border-0 bg-transparent" style="width: 18rem;">
           <div class="image-box">
-            <%= image_tag list.movies.sample.poster_url, alt: "image", class: "card-img-top image image-first" %>
-            <%= image_tag list.movies.sample.poster_url, alt: "image", class: "card-img-top image image-second" %>
-            <%= image_tag list.movies.sample.poster_url, alt: "image", class: "card-img-top image image-third" %>
+            <%= image_tag list.movies.sample.poster_url, alt: "image", class: "card-img-top image" %>
+            <%= image_tag list.movies.sample.poster_url, alt: "image", class: "card-img-top image" %>
+            <%= image_tag list.movies.first.poster_url, alt: "image", class: "card-img-top image" %>
           </div>
-          <div class="list-title mt-n5"><span class="mt-n5 mb-1"><%= link_to list.name, list_path(list) %></span></div>
+          <%= link_to list_path(list), class: "circular-button" do %>
+            <div class="list-title mt-n5"><span class="mt-n5 mb-1"><%= list.name %></span></div>
+          <% end %>
         </div>
       </div>
     <% end %>
