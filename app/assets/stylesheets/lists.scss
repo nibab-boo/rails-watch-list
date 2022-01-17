@@ -1,15 +1,11 @@
-// Place all the styles related to the lists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-@import "lists/show";
 a {
-  color: inherit;
   &:hover {
     text-decoration: none;
   }
-
-  &:visited {
-    color: inherit;
-  }
 }
 
+.jumbotron{
+  background-size: cover;
+  background-position: center;
+  text-shadow: 1px 1px rgb(0, 0, 0);
+}

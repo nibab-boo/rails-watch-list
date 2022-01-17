@@ -1,11 +1,8 @@
 class BookmarksController < ApplicationController
   before_action :find_list, except: [:destroy]
 
-  def new
-    @bookmark = Bookmark.new
-  end
-  
   def create
+    raise
     @bookmark = Bookmark.new(build_bookmark)
     @bookmark.list = @list
     if @bookmark.save
@@ -16,6 +13,7 @@ class BookmarksController < ApplicationController
   end
   
   def destroy
+    @bookmark.destroy
   end
   private
 
