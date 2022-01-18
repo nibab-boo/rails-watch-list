@@ -1,6 +1,9 @@
 <div class="container">
   <div class="poster">
-    <%= image_tag @list.movies.first.poster_url, alt: "poster" %>
+    <%= link_to list_path(@list), method: :delete, data: { confirm: "Hey hey, stop right here! You might not want to do this." }, class: "poster-trash text-light h4" do  %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    <% end %>
+    <%= image_tag @list.photo, alt: "poster" %>
     <p class="list-name h4 text-center mx-auto py-2 bg-success w-75">
       <strong>
         <%= @list.name %>
@@ -13,20 +16,21 @@
     <% @list.bookmarks.each do |bookmark| %>
       <div class="col-md-4 m-sm-6 mx-auto">
         <div class="card-hello  my-5">
+          <span class= "rating"><%= bookmark.movie.rating %> <i class="fa fa-star" aria-hidden="true"></i></span>
           <%= image_tag bookmark.movie.poster_url, alt: "movie poster" %>
           <div class="card-hello-info">
             <h4><strong><%= bookmark.movie.title %></strong></h4>
-            <p><%= bookmark.comment[..30] + "..." %></p>
+            <p><%= bookmark.comment %></p>
           </div>  
           <div>
-            <%= link_to "delete", bookmark_path(bookmark), class: "trash btn btn-primary m-1", method: :delete  %>
+            <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, bookmark_path(bookmark), class: "trash text-danger", method: :delete, data: { confirm: "Are you sure about it?" }  %>
           </div>
         </div>
       </div>    
     <% end %>
     <div class="col-md-4 m-sm-6 mx-auto">
         <div class="card-hello d-flex align-items-center justify-content-center  my-5">
-          <span data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+          <span class="plus" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
             <i class="fas fa-plus"></i>
           </span>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

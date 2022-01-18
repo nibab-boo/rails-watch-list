@@ -24,8 +24,13 @@ movies_json["results"].each do |movie|
     rating: movie["vote_average"]
     )
 end
+n = 1
 5.times do 
-  list = List.create(name: Faker::Name.first_name)
+  list = List.new(
+    name: Faker::Name.first_name,
+    )
+    file = URI.open("https://picsum.photos/500/300?random=#{n}")
+  list.photo.attach(io: file, filename: 'movie.png', content_type: 'image/png');
   (0...4).to_a.each do |x|
     book = Bookmark.new(
       comment: Faker::Movies::BackToTheFuture.quote,
@@ -34,5 +39,6 @@ end
     )
     book.save if book.valid?
   end
+  n += 1
 end
 puts "done"

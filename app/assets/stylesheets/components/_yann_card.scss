@@ -13,7 +13,7 @@
   &:hover .trash{
     display: block;
   };
-  span {
+  .plus {
     font-size: 42px;
     font-weight: bold;
     color: rgb(241, 241, 241);
@@ -22,6 +22,15 @@
     &:hover {
       transform: rotateY(360deg)
     }
+  }
+  .rating {
+    position: absolute;
+    top: 56px;
+    font-style: bold;
+    font-size: 1.2em;
+    color: yellow;
+    text-shadow: 1px 1px rgb(151, 132, 132);
+    left: 20px;
   }
 }
 
@@ -62,10 +71,14 @@
 }
 
 .trash {
+  color: rgb(240, 89, 89);
   position: absolute;
   display: none;
   right: 20px;
   // transform: translateX(-50%);
   bottom: 50px;
   transition: display 1s;
+  &:hover {
+    color: rgb(128, 56, 56);
+  }
 }
