@@ -1,27 +1,5 @@
 <div class="container">
   <div class="poster">
-    <span data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
-      <i class="fas fa-plus"></i>
-    </span>
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New Bookmark</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <%= simple_form_for [@list, @bookmark] do |f| %>
-            <%= f.input :comment %>
-            <%= f.association :movie %>
-            <%= f.submit "Add a bookmark", class: "btn btn-primary btn-lg btn-block"%>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
     <%= image_tag @list.movies.first.poster_url, alt: "poster" %>
     <p class="list-name h4 text-center mx-auto py-2 bg-success w-75">
       <strong>
@@ -46,5 +24,31 @@
         </div>
       </div>    
     <% end %>
+    <div class="col-md-4 m-sm-6 mx-auto">
+        <div class="card-hello d-flex align-items-center justify-content-center  my-5">
+          <span data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+            <i class="fas fa-plus"></i>
+          </span>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New Bookmark</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <%= simple_form_for [@list, @bookmark] do |f| %>
+                    <%= f.input :comment %>
+                    <%= f.association :movie %>
+                    <%= f.submit "Add a bookmark", class: "btn btn-primary btn-lg btn-block"%>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
   </div>
 </div>
