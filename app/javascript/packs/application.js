@@ -13,8 +13,8 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import 'bootstrap';
-import { circularButtonEffect } from '../components/_index';
-import { yann_card } from '../components/_yann_card';
+import { circularButtonEffect } from '../components/index';
+import { yann_card } from '../components/yann_card';
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   circularButtonEffect();
