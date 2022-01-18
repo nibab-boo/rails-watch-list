@@ -11,7 +11,11 @@
                 <%= image_tag list.movies.sample.poster_url, alt: "image", class: "card-img-top image" %> 
               <% end %>
             <% end %>
-            <%= image_tag list.photo, alt: "image", class: "card-img-top image" %>
+            <% if list.photo.attached? %>
+              <%= image_tag list.photo, alt: "image", class: "card-img-top image" %>
+            <% else %>
+              <%= image_tag 'https://picsum.photos/500/300?random=1', alt: "image", class: "card-img-top image" %>
+            <% end %>
           </div>
           <%= link_to list_path(list), class: "circular-button" do %>
             <div class="list-title mt-n5"><span class="mt-n5 mb-1"><%= list.name %></span></div>

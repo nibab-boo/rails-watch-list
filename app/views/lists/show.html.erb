@@ -3,7 +3,12 @@
     <%= link_to list_path(@list), method: :delete, data: { confirm: "Hey hey, stop right here! You might not want to do this." }, class: "poster-trash text-light h4" do  %>
       <i class="fa fa-trash" aria-hidden="true"></i>
     <% end %>
-    <%= image_tag @list.photo, alt: "poster" %>
+    <% if @list.photo.attached? %>
+              <%= image_tag @list.photo, alt: "image", class: "card-img-top image" %>
+            <% else %>
+              <%= image_tag 'https://picsum.photos/500/300?random=1', alt: "image", class: "card-img-top image" %>
+            <% end %>
+    <%#= image_tag @list.photo, alt: "poster" %>
     <p class="list-name h4 text-center mx-auto py-2 bg-success w-75">
       <strong>
         <%= @list.name %>
