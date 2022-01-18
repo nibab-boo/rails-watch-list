@@ -17,17 +17,4 @@
     border-top: 10px solid rgba(139, 247, 139, 0.74);
     border-bottom: 10px solid #058f0593;
   }
-  span {
-    position: absolute;
-    font-size: 24px;
-    right: 20px;
-    top: 20px;
-    font-weight: bold;
-    color: rgb(241, 241, 241);
-    text-shadow: 2px 2px hotpink;
-    transition: transform 1.4s;
-    &:hover {
-      transform: rotateY(360deg)
-    }
-  }
 }
