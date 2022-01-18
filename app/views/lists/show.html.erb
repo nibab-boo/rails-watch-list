@@ -32,22 +32,19 @@
   <br>
   <h4 class="mt-5 text-center text-monospace"><strong>Bookmarks</strong></h4>
   <div class="row my-3">
-    <% @list.bookmarks.each do |thing| %>
-      <div class="col-3 mx-auto my-3">
-        <% @list.bookmarks.each do |bookmark| %>
-          <div class="card-hello  my-3">
-            <%= image_tag bookmark.movie.poster_url, alt: "movie poster" %>
-            <div class="card-hello-info">
-              <h4><strong><%= bookmark.movie.title %></strong></h4>
-              <p><%= bookmark.comment[..30] + "..." %></p>
-              <div>
-                <%#= link_to ,  %>
-              </div>
-            </div>  
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="col-md-4 m-sm-6 mx-auto">
+        <div class="card-hello  my-5">
+          <%= image_tag bookmark.movie.poster_url, alt: "movie poster" %>
+          <div class="card-hello-info">
+            <h4><strong><%= bookmark.movie.title %></strong></h4>
+            <p><%= bookmark.comment[..30] + "..." %></p>
+          </div>  
+          <div>
+            <%= link_to "delete", bookmark_path(bookmark), class: "trash btn btn-primary m-1", method: :delete  %>
           </div>
-        <% end %>
-      </div>
+        </div>
+      </div>    
     <% end %>
-    
   </div>
 </div>
