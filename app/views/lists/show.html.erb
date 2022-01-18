@@ -31,10 +31,21 @@
   </div>
   <br>
   <h4 class="mt-5 text-center text-monospace"><strong>Bookmarks</strong></h4>
-  <div class="row">
+  <div class="row my-3">
     <% @list.bookmarks.each do |thing| %>
-      <div class="col-3">
-        
+      <div class="col-3 mx-auto my-3">
+        <% @list.bookmarks.each do |bookmark| %>
+          <div class="card-hello  my-3">
+            <%= image_tag bookmark.movie.poster_url, alt: "movie poster" %>
+            <div class="card-hello-info">
+              <h4><strong><%= bookmark.movie.title %></strong></h4>
+              <p><%= bookmark.comment[..30] + "..." %></p>
+              <div>
+                <%#= link_to ,  %>
+              </div>
+            </div>  
+          </div>
+        <% end %>
       </div>
     <% end %>
     

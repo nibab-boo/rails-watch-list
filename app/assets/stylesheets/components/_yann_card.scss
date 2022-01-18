@@ -1,0 +1,49 @@
+/*Card Hello*/
+.card-hello {
+  /*fixed*/
+  display: flex;
+  flex-direction: column;
+  /*customizable*/
+  height: 300px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.card-hello img {
+  /*fixed*/
+  width: 100%;
+  object-fit: cover;
+  /*customizable*/
+  object-position: 50% 50%;
+  border-radius: 16px 16px 0 0;
+  height: 30%;
+  transition: height 1s ease;
+}
+
+.card-hello-info {
+  /*fixed*/
+  overflow: hidden;
+  /*customizable*/
+  padding: 16px;
+}
+
+.card-hello-info h2 {
+  /*customizable*/
+  margin: 16px 0;
+}
+
+/* De-activate card hover style for tablet/mobiles */
+@media (min-width: 1100px) {
+  .card-hello img:hover {
+    /*customizable*/
+    height: 70%;
+  }
+}
+
+.card-hello img.tapped {
+  /*customizable*/
+  height: 70%;
+}

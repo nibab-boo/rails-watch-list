@@ -2,7 +2,7 @@ class BookmarksController < ApplicationController
   before_action :find_list, except: [:destroy]
 
   def create
-    raise
+    # raise
     @bookmark = Bookmark.new(build_bookmark)
     @bookmark.list = @list
     if @bookmark.save
