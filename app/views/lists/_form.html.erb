@@ -1,5 +1,5 @@
 <%= simple_form_for list do |f| %>
   <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :photo, label: '<i class="fas fa-image"></i>'.html_safe, as: :file  %>
   <%= f.submit class: "btn btn-lg w-100 mt-5 btn-primary"%>
 <% end %>

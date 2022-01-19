@@ -5,7 +5,11 @@ const circularButtonEffect = () =>   {
     let image_box = e.currentTarget.parentElement.previousElementSibling;
     console.log("working");
     let images = image_box.querySelectorAll("img");
-    images.forEach(image => image.classList.toggle("image-hover"));
+    if (e.type == 'mouseover') {
+      images.forEach(image => image.classList.add("image-hover"));
+    } else {
+      images.forEach(image => image.classList.remove("image-hover"));
+    }
   };
 
   buttons.forEach(button => {

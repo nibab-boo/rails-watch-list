@@ -1,13 +1,13 @@
 <div class="container">
   <div class="poster">
-    <%= link_to list_path(@list), method: :delete, data: { confirm: "Hey hey, stop right here! You might not want to do this." }, class: "poster-trash text-light h4" do  %>
-      <i class="fa fa-trash" aria-hidden="true"></i>
-    <% end %>
+    <%#= link_to list_path(@list), method: :delete, data: { confirm: "Hey hey, stop right here! You might not want to do this." }, class: "poster-trash text-light h4" do  %>
+      <%# <i class="fa fa-trash" aria-hidden="true"></i> %>
+    <%# end %>
     <% if @list.photo.attached? %>
-              <%= image_tag @list.photo, alt: "image", class: "card-img-top image" %>
-            <% else %>
-              <%= image_tag 'https://picsum.photos/500/300?random=1', alt: "image", class: "card-img-top image" %>
-            <% end %>
+      <%= cl_image_tag @list.photo.key, alt: "image", class: "card-img-top image" %>
+    <% else %>
+      <%= image_tag "https://source.unsplash.com/1600x900/?" + @list.name, alt: "image", class: "card-img-top image" %>
+    <% end %>
     <%#= image_tag @list.photo, alt: "poster" %>
     <p class="list-name h4 text-center mx-auto py-2 bg-success w-75">
       <strong>
@@ -20,9 +20,9 @@
   <div class="row my-3">
     <% @list.bookmarks.each do |bookmark| %>
       <div class="col-md-4 m-sm-6 mx-auto">
-        <div class="card-hello  my-5">
+        <div class="card-hello my-5" data-aos="fade-up">
           <span class= "rating"><%= bookmark.movie.rating %> <i class="fa fa-star" aria-hidden="true"></i></span>
-          <%= image_tag bookmark.movie.poster_url, alt: "movie poster" %>
+          <%= image_tag bookmark.movie.poster_url, alt: "movie poster", class: "movie_poster" %>
           <div class="card-hello-info">
             <h4><strong><%= bookmark.movie.title %></strong></h4>
             <p><%= bookmark.comment %></p>
@@ -34,7 +34,7 @@
       </div>    
     <% end %>
     <div class="col-md-4 m-sm-6 mx-auto">
-        <div class="card-hello d-flex align-items-center justify-content-center  my-5">
+        <div class="card-hello d-flex align-items-center justify-content-center my-5" data-aos="fade-up">
           <span class="plus" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
             <i class="fas fa-plus"></i>
           </span>
