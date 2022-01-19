@@ -1,0 +1,10 @@
+<div class="movie-banner">
+  <div class="show-movie-poster">
+    <%= image_tag @movie.poster_url, alt:"movie poster", class: "show-movie-poster shadow-lg rounded" %>
+  </div>
+  <div id="show-movie-info" class="m-2 p-3 bg-light shadow-lg" style="bottom: -100px; right: -64px;" data-value = "-20">
+    <h3 class="h2"><%= @movie.title %></h3>
+    <p><%= "⭐" * @movie.rating %></p>
+    <p><%= @movie.overview %></p>
+  </div>
+</div>

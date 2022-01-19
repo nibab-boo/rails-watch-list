@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def show
-    gti 
+    @movie = Movie.find(params[:id])
+    @movies = Movie.all
   end
-
 end

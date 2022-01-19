@@ -24,7 +24,7 @@
           <span class= "rating"><%= bookmark.movie.rating %> <i class="fa fa-star" aria-hidden="true"></i></span>
           <%= image_tag bookmark.movie.poster_url, alt: "movie poster", class: "movie_poster" %>
           <div class="card-hello-info">
-            <h4><strong><%= bookmark.movie.title %></strong></h4>
+            <h4><strong><%= link_to bookmark.movie.title, movie_path(bookmark.movie) %></strong></h4>
             <p><%= bookmark.comment %></p>
           </div>  
           <div>
