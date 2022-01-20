@@ -5,7 +5,7 @@ export const movieMove = () => {
   const moveAble = document.getElementById('show-movie-info');
   let bottomVal = parseInt(moveAble.style.bottom, 10);
   let rightVal = parseInt(moveAble.style.right, 10);
-  if (bottomVal <= -250){
+  if (bottomVal <= -350){
     moveAble.dataset.value = '20'
   }
   else if(bottomVal >= -40) {
