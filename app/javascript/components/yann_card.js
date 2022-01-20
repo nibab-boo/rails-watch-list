@@ -1,5 +1,8 @@
 export const yann_card = () => {
-  document.querySelector(".movie_poster").addEventListener("click", (event) => {
-      event.currentTarget.classList.toggle("tapped");
+  const movie_posters = document.querySelectorAll(".movie_poster"); 
+  movie_posters.forEach((element) => {
+    element.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("tapped");
+    });
   });
 };
