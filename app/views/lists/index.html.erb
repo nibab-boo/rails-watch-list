@@ -12,7 +12,7 @@
               <% end %>
             <% end %>
             <% if list.photo.attached? %>
-              <%= image_tag list.photo, alt: "image", class: "card-img-top image" %>
+              <%= cl_image_tag list.photo.key, alt: "image", class: "card-img-top image" %>
             <% else %>
               <%= image_tag "https://source.unsplash.com/1600x900/?" + list.name, alt: "image", class: "card-img-top image" %>
             <% end %>
