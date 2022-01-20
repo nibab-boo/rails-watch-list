@@ -1,9 +1,8 @@
 const circularButtonEffect = () =>   {
   const buttons = document.querySelectorAll('.list-title');
-
+  console.log("I am in circular effect");
   const image_finder = (e) => {
     let image_box = e.currentTarget.parentElement.previousElementSibling;
-    console.log("working");
     let images = image_box.querySelectorAll("img");
     if (e.type == 'mouseover') {
       images.forEach(image => image.classList.add("image-hover"));

@@ -18,12 +18,14 @@ import { yann_card } from '../components/yann_card';
 import { typingEffect } from '../components/init_typed';
 import { showCardEffect } from '../components/init_aos';
 import { movieClickEffect } from '../components/movie_click_effect';
+console.log("working");
+
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   showCardEffect();
   circularButtonEffect();
-  typingEffect();
   yann_card();
+  typingEffect();
   movieClickEffect();
 });
 

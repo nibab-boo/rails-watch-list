@@ -3,8 +3,20 @@
     <%= image_tag @movie.poster_url, alt:"movie poster", class: "show-movie-poster shadow-lg rounded" %>
   </div>
   <div id="show-movie-info" class="m-2 p-3 bg-light shadow-lg" style="bottom: -100px; right: -64px;" data-value = "-20">
-    <h3 class="h2"><%= @movie.title %></h3>
+    <h3 class="h2"><strong><%= @movie.title %></strong></h3>
     <p><%= "⭐" * @movie.rating %></p>
-    <p><%= @movie.overview %></p>
+    <p class="text-monospace"><%= @movie.overview %></p>
   </div>
+</div>
+<div class="container">
+  <div class="row my-3">
+    <% @movies.each do |movie| %>
+      <div class="col-md-4 m-sm-6 mx-auto">
+        <%= link_to movie_path(movie) do  %>
+          <%= image_tag movie.poster_url, alt: "mini poster", class: "" %>
+        <% end %>
+      </div>    
+    <% end %>
+  </div>
+
 </div>
