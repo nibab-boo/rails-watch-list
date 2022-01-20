@@ -1,6 +1,7 @@
-const clickAble = document.querySelector('.show-movie-poster');
-console.log("hey guys!")
-export const movieClickEffect = clickAble.addEventListener("click", ()=> {
+export const movieMove = () => {
+  const clickAble = document.querySelector('.show-movie-poster');
+// console.log("hey guys!")
+ const movieClickEffect = clickAble.addEventListener("click", ()=> {
   const moveAble = document.getElementById('show-movie-info');
   let bottomVal = parseInt(moveAble.style.bottom, 10);
   let rightVal = parseInt(moveAble.style.right, 10);
@@ -13,4 +14,4 @@ export const movieClickEffect = clickAble.addEventListener("click", ()=> {
   let value = parseInt(moveAble.dataset.value, 10);
   moveAble.style.bottom = (bottomVal + value) + "px";
   moveAble.style.right = (rightVal + (value/2)) + "px";
-});
+});}

@@ -10,13 +10,7 @@
 </div>
 <div class="container">
   <div class="row my-3">
-    <% @movies.each do |movie| %>
-      <div class="col-md-4 m-sm-6 mx-auto">
-        <%= link_to movie_path(movie) do  %>
-          <%= image_tag movie.poster_url, alt: "mini poster", class: "" %>
-        <% end %>
-      </div>    
-    <% end %>
+    
   </div>
 
 </div>

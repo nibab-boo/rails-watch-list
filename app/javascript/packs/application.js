@@ -14,19 +14,19 @@ ActiveStorage.start()
 
 import 'bootstrap';
 import { circularButtonEffect } from '../components/index';
+// import { movieMove } from '../components/movie_click_effect';
 import { yann_card } from '../components/yann_card';
 import { typingEffect } from '../components/init_typed';
 import { showCardEffect } from '../components/init_aos';
-// import { movieClickEffect } from '../components/movie_click_effect';
 console.log("working");
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
+  // movieMove();
   showCardEffect();
   circularButtonEffect();
   yann_card();
   typingEffect();
-  movieClickEffect();
 });
 
 
