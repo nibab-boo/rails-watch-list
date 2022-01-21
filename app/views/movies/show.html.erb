@@ -9,8 +9,15 @@
   </div>
 </div>
 <div class="container">
-  <div class="row my-3">
-    
+  <div class="row my-5">
+    <%= simple_form_for(@new_movie) do |f| %>
+        <%= f.input :title %>
+        <%= f.input :overview %>
+        <%= f.input :poster_url %>
+        <%= f.input :rating %>
+        <%= f.submit %>
+    <% end %>
+      
   </div>
 
 </div>

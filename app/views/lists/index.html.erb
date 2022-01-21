@@ -8,7 +8,7 @@
             <% unless list.movies.empty? %>
               <% list.movies.each_with_index do |movie, index| %>
                 <% break if index.equal? 2 %>
-                <%= image_tag movie.poster_url, alt: "image", class: "card-img-top image" %> 
+                <%= image_tag movie.poster_url, alt: "image", class: "card-img-top movie-circle image" %> 
               <% end %>
             <% end %>
             <% if list.photo.attached? %>

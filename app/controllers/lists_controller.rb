@@ -1,10 +1,11 @@
 class ListsController < ApplicationController
+  before_action :find_list, only: [:show, :destroy]
+
   def index
     @lists = List.all
   end
 
   def show
-    @list = List.find(params[:id])
     @bookmark = Bookmark.new
   end
 
@@ -21,7 +22,15 @@ class ListsController < ApplicationController
     end
   end
 
+  def destroy
+    @list.destroy
+  end
+
   private
+
+  def find_list
+    @list = List.find(params[:id])
+  end
 
   def build_list
     params.require(:list).permit(:name, :photo)
