@@ -5,4 +5,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  position: relative;
+  .cinema-banner-para {
+    position: absolute;
+    width: 300px;
+    top: 14%;
+    right: 20%;
+    font-size: 1.3em;
+  }
 }

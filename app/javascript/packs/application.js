@@ -16,7 +16,7 @@ import 'bootstrap';
 import { circularButtonEffect } from '../components/index';
 import { movieMove } from '../components/movie_click_effect'; // this is importing the troublemaker
 import { yann_card } from '../components/yann_card';
-import { typingEffect } from '../components/init_typed';
+import { typingEffect, bannerTyper } from '../components/init_typed';
 import { showCardEffect } from '../components/init_aos';
 console.log("working");
 
@@ -38,6 +38,10 @@ document.addEventListener('turbolinks:load', () => {
   const typing_effect = document.querySelector("#typed-text")
   if (typing_effect) {
     typingEffect();
+  }
+  const banner_typer = document.querySelector("#cinema-banner-text")
+  if (banner_typer) {
+    bannerTyper();
   }
 });
 
