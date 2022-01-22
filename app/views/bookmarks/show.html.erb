@@ -1,23 +1,22 @@
 <div class="movie-banner">
   <div class="show-movie-poster">
-    <%= image_tag @movie.poster_url, alt:"movie poster", class: "show-movie-poster shadow-lg rounded" %>
+    <%= image_tag @bookmark.movie.poster_url, alt:"movie poster", class: "show-movie-poster shadow-lg rounded" %>
   </div>
   <div id="show-movie-info" class="m-2 p-3 bg-light shadow-lg" style="bottom: -100px; right: -64px;" data-value = "-20">
-    <h3 class="h2"><strong><%= @movie.title %></strong></h3>
-    <p><%= "⭐" * @movie.rating %></p>
-    <p class="text-monospace"><%= @movie.overview %></p>
+    <h3 class="h2"><strong><%= @bookmark.movie.title %></strong></h3>
+    <p><%= "⭐" * @bookmark.movie.rating %></p>
+    <p class="text-monospace"><%= @bookmark.movie.overview %></p>
   </div>
 </div>
 <div class="container">
   <div class="row my-5">
-    <%= simple_form_for(@new_movie) do |f| %>
+    <%= simple_form_for [@bookmark, @movie] do |f| %>
         <%= f.input :title %>
         <%= f.input :overview %>
         <%= f.input :poster_url %>
         <%= f.input :rating %>
         <%= f.submit %>
     <% end %>
-      
   </div>
 
 </div>

@@ -7,12 +7,12 @@ class MoviesController < ApplicationController
   end
 
   def create
-    # raise
-    @new_movie = Movie.new(build_movie)
-    if @new_movie.save
-      redirect_to movie_path(@new_movie)
+    @bookmark = Bookmark.find(params[:bookmark_id])
+    @movie = Movie.new(build_movie)
+    if @movie.save
+      redirect_to movie_path(@movie)
     else
-      render 'movies/show'
+      render "bookmarks/show"
     end
   end
 

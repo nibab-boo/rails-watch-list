@@ -1,5 +1,11 @@
 class BookmarksController < ApplicationController
-  before_action :find_list, except: [:destroy]
+  before_action :find_list, except: [:destroy, :show]
+
+  def show
+    @bookmark = Bookmark.find(params[:id])
+    @movie = Movie.new
+  end
+
 
   def create
     # raise
