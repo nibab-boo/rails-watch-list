@@ -3,7 +3,6 @@ class BookmarksController < ApplicationController
 
   def show
     @bookmark = Bookmark.find(params[:id])
-    @movie = Movie.new
   end
 
 

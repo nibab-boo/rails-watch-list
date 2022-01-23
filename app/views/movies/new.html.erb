@@ -1,0 +1,14 @@
+<h2>Hi From bookmarks/new</h2>
+<%= flash[:notice] %>
+<%#= form_tag movies_path, method: :post do |f| %>
+    <%#= text_field_tag :title, params[:search], class: "search-bar form-control" %>
+    <%#= submit_tag "Search", class: "btn btn-outline-success mx-2 my-sm-0" %>
+<%# end %>
+
+<%= simple_form_for(@movie) do |f| %>
+    <%= f.input :title %>
+    <%= f.submit 'Search' %>
+<% end %>
+  
+  
+  
