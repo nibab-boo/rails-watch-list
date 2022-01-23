@@ -1,1 +1,18 @@
-<h2>This is index page</h2>
+<h2 class="text-center">This is movie/index page</h2>
+<div class="container bg-light">
+  <div class="row justify-content-center">
+    <% @movies.each do |movie| %>
+      <div class="col-auto px-0">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <%= image_tag movie.poster_url, alt: "movie poster" %>
+            </div>
+            <div class="flip-card-back">
+            </div>
+          </div>
+        </div>      
+      </div>
+    <% end %>
+  </div>
+</div>
