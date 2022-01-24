@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   before_action :find_movie, only: [:destroy]
   
   def index
-    @movies = Movie.all
+    @movies = Movie.order(id: :desc)
     @movie = Movie.new
   end
 
@@ -23,8 +23,9 @@ class MoviesController < ApplicationController
     )
     if @movie.save
       redirect_to movies_path
+    else
+      render :index
     end
-    render :new
   end
 
   def destroy
