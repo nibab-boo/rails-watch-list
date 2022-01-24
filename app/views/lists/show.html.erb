@@ -25,7 +25,11 @@
     <% @list.bookmarks.each do |bookmark| %>
       <div class="col-md-4 m-sm-6 mx-auto">
         <div class="card-hello my-5" data-aos="fade-up">
-          <span class= "rating"><%= bookmark.movie.rating %> <i class="fa fa-star" aria-hidden="true"></i></span>
+          <span class= "rating">
+            <% bookmark.movie.rating.times do %>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            <% end %> 
+          </span>
           <%= image_tag bookmark.movie.poster_url, alt: "movie poster", class: "movie_poster" %>
           <div class="card-hello-info">
             <h4><strong><%= link_to bookmark.movie.title, bookmark_path(bookmark) %></strong></h4>

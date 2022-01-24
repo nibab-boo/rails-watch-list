@@ -50,18 +50,30 @@
 
 .flip-card-back {
   transform: rotateY(180deg);
+  background-color: bisque;
+  .flip-card-content {
+    padding: 16px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    strong {
+      padding-bottom: 4px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid rgb(218, 171, 171);
+    }
+    .rating {
+      margin-bottom: 8px;
+    }
+  }
 }
 
 .flip-card.flipped {
   position: relative;
   z-index: 1000;
-  // transform: scale(1.1, 1.1);
   .flip-card-inner {
     transform: rotateY(180deg);
   } 
   &:hover {
     .flip-card-inner {
-      // transform: rotateX(0);
       transform: rotateY(180deg) rotateX(-16deg);
     }
   }
