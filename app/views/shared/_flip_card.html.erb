@@ -1,0 +1,18 @@
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <%= image_tag movie.poster_url, alt: "movie poster" %>
+    </div>
+    <div class="flip-card-back">
+      <div class="flip-card-content">
+        <strong class="d-block"><%= movie.title %></strong>
+        <span class= "rating">
+        <% movie.rating.times do %>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        <% end %> 
+      </span>
+        <p><%= movie.overview %></p>
+      </div>
+    </div>
+  </div>
+</div>  
