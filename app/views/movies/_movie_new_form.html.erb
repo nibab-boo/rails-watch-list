@@ -1,0 +1,12 @@
+<div class="form-click-box shadow mx-5 mb-5 ">
+  <div class="new-movie-form">
+    <%= simple_form_for(@movie) do |f| %>
+        <h5 class="text-center my-2"><strong>Have something on mind!Feel free</strong></h5>    
+        <%= f.input :title %>
+        <%= f.submit 'Search and Add', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <div class="text-center arrow" data-action="show">
+    <i class="fas fa-angle-double-down"></i>
+  </div>
+</div>

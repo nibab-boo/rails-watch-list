@@ -1,21 +1,12 @@
 <div class="container my-3 py-2">
-  <div class="form-click-box shadow mx-5 mb-5 ">
-    <div class="new-movie-form">
-      <%= simple_form_for(@movie) do |f| %>
-          <h5 class="text-center my-2"><strong>Have something on mind!Feel free</strong></h5>    
-          <%= f.input :title %>
-          <%= f.submit 'Search and Add', class: "text-center" %>
-      <% end %>
-    </div>
-    <div class="text-center arrow" data-action="show">
-      <i class="fas fa-angle-double-down"></i>
-    </div>
-  </div>
+  <%# render for form with animation %>
+  <%= render 'movie_new_form' %>
   <h4 class="text-center my-5"><strong>Our Movies Collection</strong></h4>    
   <div class="row justify-content-center mb-5">
     <% @movies.each do |movie| %>
       <div class="col-auto px-0">
-        <%= render 'shared/flip_card', movie: movie %>    
+        <%# render for flip-card %>
+        <%= render 'flip_card', movie: movie %>    
       </div>
     <% end %>
   </div>
