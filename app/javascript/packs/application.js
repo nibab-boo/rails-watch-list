@@ -48,6 +48,14 @@ document.addEventListener('turbolinks:load', () => {
   if (flipCards) {
     flipCardClick();
   }
+
+  const arrow = document.querySelector('.arrow');
+  arrow.addEventListener("click", (e)=>{
+    const formBox = document.querySelector('.new-movie-form');
+    formBox.classList.toggle('show');
+    e.currentTarget.querySelector("i").classList.toggle("fa-angle-double-down");
+    e.currentTarget.querySelector("i").classList.toggle("fa-angle-double-up");
+  });
 });
 
 

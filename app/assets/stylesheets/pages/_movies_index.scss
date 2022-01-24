@@ -1,0 +1,65 @@
+.new-movie-form {
+  // transition: display 2s;
+  transition: height display 1s;
+  height: 0;
+  form {
+    display: none;
+    transition-delay: 2s;
+  }
+}
+.new-movie-form.show {
+  // transition: display 2s;
+  height: 100%;
+  form {
+    display: block;
+  }
+}
+.arrow {
+  overflow-y: hidden;
+  padding: 10px;
+  perspective: 800px;
+  .fa-angle-double-down{
+    animation: arrow_down linear infinite;
+    animation-duration: 2s;
+  }
+  .fa-angle-double-up{
+    animation: arrow_up linear infinite;
+    animation-duration: 2s;
+  }
+}
+
+@keyframes arrow_down {
+  0%{
+    transform: translateY(0%)  rotateY(0deg);
+  }
+  30%{
+    transform: translateY(0%) rotateY(180deg);
+  }
+  60%{
+    transform: translateY(110%) rotateY(0);
+  }
+  70%{
+    transform: translateY(90%) rotateY(0deg);
+  }
+  80%{
+    transform: translateY(100%) rotateY(0);
+  }
+}
+
+@keyframes arrow_up {
+  0%{
+    transform: translateY(0%)  rotateY(0deg);
+  }
+  30%{
+    transform: translateY(0%) rotateY(180deg);
+  }
+  60%{
+    transform: translateY(-110%) rotateY(0);
+  }
+  70%{
+    transform: translateY(-90%) rotateY(0deg);
+  }
+  80%{
+    transform: translateY(-100%) rotateY(0);
+  }
+}
