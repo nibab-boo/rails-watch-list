@@ -18,6 +18,7 @@ import { movieMove } from '../components/movie_click_effect'; // this is importi
 import { yann_card } from '../components/yann_card';
 import { typingEffect, bannerTyper } from '../components/init_typed';
 import { showCardEffect } from '../components/init_aos';
+import { flipCardClick } from '../components/flip_card';
 console.log("working");
 
 document.addEventListener('turbolinks:load', () => {
@@ -42,6 +43,11 @@ document.addEventListener('turbolinks:load', () => {
   const banner_typer = document.querySelector("#cinema-banner-text")
   if (banner_typer) {
     bannerTyper();
+  }
+
+  const flipCards = document.querySelectorAll(".flip-card") 
+  if (flipCards) {
+    flipCardClick();
   }
 });
 
