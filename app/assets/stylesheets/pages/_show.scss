@@ -27,3 +27,19 @@
     border-bottom: 10px solid #058f0593;
   }
 }
+[type=radio] {
+  // position: absolute;
+  // // opacity: 0;
+  // width: 0;
+  // height: 0;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  &:checked + img {
+    outline: 2px solid #f00;
+  }
+}
+
+[type=radio] + img {
+  cursor: pointer;
+}
