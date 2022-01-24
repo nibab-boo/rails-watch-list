@@ -1,5 +1,8 @@
+.form-click-box{
+  background-color: rgba(245, 192, 192, 0.4);
+}
+
 .new-movie-form {
-  // transition: display 2s;
   transition: height display 1s;
   height: 0;
   form {
@@ -10,6 +13,7 @@
 .new-movie-form.show {
   // transition: display 2s;
   height: 100%;
+  padding: 16px;
   form {
     display: block;
   }

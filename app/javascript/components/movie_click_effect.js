@@ -9,7 +9,7 @@ export const movieMove = () => {
     moveAble.dataset.value = '20'
   }
   else if(bottomVal >= -40) {
-    moveAble.dataset.value = "-20"
+    moveAble.dataset.value = "-20"  
   }
   let value = parseInt(moveAble.dataset.value, 10);
   moveAble.style.bottom = (bottomVal + value) + "px";
