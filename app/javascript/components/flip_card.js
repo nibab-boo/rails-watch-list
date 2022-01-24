@@ -3,7 +3,6 @@ export const flipCardClick = () => {
   flipCards.forEach((card) => {
     card.addEventListener("click", (event) => {
         event.currentTarget.classList.toggle("flipped");
-        console.log("just flipped the card.");
     });
   })
 };

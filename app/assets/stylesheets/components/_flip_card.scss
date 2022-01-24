@@ -3,6 +3,15 @@
   height: 300px;
   width: 200px;
   perspective: 800px;
+  h2 {
+    /*customizable*/
+    margin: 0;
+  }
+  
+  p {
+    /*customizable*/
+    margin: 0;
+  }
 }
 
 .flip-card-inner {
@@ -18,19 +27,7 @@
   }
 }
 
-.flip-card h2 {
-  /*customizable*/
-  margin: 0;
-}
 
-.higer {
-  z-index: 100 !important
-}
-
-.flip-card p {
-  /*customizable*/
-  margin: 0;
-}
 
 .flip-card-front, .flip-card-back {
   /*fixed*/
@@ -58,8 +55,7 @@
 .flip-card.flipped {
   position: relative;
   z-index: 1000;
-  transform: scale(1.1, 1.1);
-  // box-shadow: 0 0 4px 4px black ;
+  // transform: scale(1.1, 1.1);
   .flip-card-inner {
     transform: rotateY(180deg);
   } 

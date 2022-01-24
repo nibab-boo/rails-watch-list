@@ -19,7 +19,6 @@ import { yann_card } from '../components/yann_card';
 import { typingEffect, bannerTyper } from '../components/init_typed';
 import { showCardEffect } from '../components/init_aos';
 import { flipCardClick } from '../components/flip_card';
-console.log("working");
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here

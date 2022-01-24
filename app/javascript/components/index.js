@@ -1,6 +1,5 @@
 const circularButtonEffect = () =>   {
   const buttons = document.querySelectorAll('.list-title');
-  console.log("I am in circular effect");
   const image_finder = (e) => {
     let image_box = e.currentTarget.parentElement.previousElementSibling;
     let images = image_box.querySelectorAll("img");
