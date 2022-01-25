@@ -62,10 +62,16 @@
         <div class="row">
           <% @movies.each do |movie| %>
             <div class="col-auto mx-auto">
-              <label class="movie-card-label">
-                <%= f.radio_button :movie_id, movie.id %>
-                <div class="new-movie-card shadow">
-                  <%= image_tag movie.poster_url, alt: "", class: "new-movie-card" %>
+              <label class="bookmark-card-label">
+                <% if @still_movies.include? movie %>
+                  <%= f.radio_button :movie_id, movie.id %>
+                  <div class="new-bookmark-card shadow">
+                  <%= image_tag movie.poster_url, alt: "", class: "new-bookmark-card bookmark-card-hover" %>
+                <% else %>
+                  <%= f.radio_button :movie_id, movie.id, disabled: true %>
+                  <div class="new-bookmark-card shadow">
+                  <%= image_tag movie.poster_url, alt: "", class: "new-bookmark-card gray-screen" %>
+                <% end %>
                   <p  lang="de" class="text-light">
                     <%= movie.title %>
                   </p>

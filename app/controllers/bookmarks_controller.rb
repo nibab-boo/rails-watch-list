@@ -10,6 +10,7 @@ class BookmarksController < ApplicationController
     # raise 
     @movie = Movie.find(params["bookmark"]["movie_id"].to_i)
     @movies = Movie.all
+    @still_movies = @list.non_existence_movies
     @bookmark = Bookmark.new(build_bookmark)
     @bookmark.list = @list
     if @bookmark.save
