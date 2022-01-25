@@ -41,22 +41,24 @@
         </div>
       </div>    
     <% end %>
-    <div class="col-md-4 m-sm-6 mx-auto">
-        <div class="card-hello d-flex align-items-center justify-content-center my-5" data-aos="fade-up">
-          <span class="plus">
-            <i class="fas fa-plus"></i>
-          </span>
-        </div>
-      </div>    
+    <%# Previous new bookmark using model and card %>
+    <%# <div class="col-md-4 m-sm-6 mx-auto">
+          <div class="card-hello d-flex align-items-center justify-content-center my-5" data-aos="fade-up">
+            <span class="plus">
+              <i class="fas fa-plus"></i>
+            </span>
+          </div>
+        </div>   %>  
   </div>
   <%# Adding dropdown effect %>
   <div class="form-click-box shadow mx-5 mb-5 ">
+    <h4 class="text-center text-muted"><strong>Wanna add something. Be my guest.</strong></h4>
     <div class="new-movie-form">
       <%# Put in your form here. %>
       <%= form_for [@list, @bookmark] do |f| %>
         <%= f.label :comment%>
-        <%= f.text_field :comment, class: "form-control"  %>
-        <%= f.submit "Add a bookmark", class: "btn btn-primary btn-lg btn-block"%>
+        <%= f.text_field :comment, class: "form-control mb-3"  %>
+        <%= f.submit "Add a bookmark", class: "btn btn-primary my-2 btn-block"%>
         <div class="row">
           <% @movies.each do |movie| %>
             <div class="col-auto mx-auto">
