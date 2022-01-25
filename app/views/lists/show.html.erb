@@ -52,13 +52,18 @@
 </div>
 
 <%= form_for [@list, @bookmark] do |f| %>
-  <%= f.label :comment %>
-  <%= f.text_field :comment %>
+  <%= f.label :comment%>
+  <%= f.text_field :comment, class: "form-control"  %>
   
   <% @movies.each do |movie| %>
-    <label>
+    <label class="movie-card-label">
       <%= f.radio_button :movie_id, movie.id %>
-      <%= image_tag movie.poster_url, alt: "movie_poster" %>
+      <div class="new-movie-card">
+        <%= image_tag movie.poster_url, alt: "", class: "new-movie-card" %>
+        <p>
+          <%= movie.title %>
+        </p>
+      </div>
     </label>
   <% end %>
   
