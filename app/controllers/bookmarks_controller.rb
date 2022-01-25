@@ -7,8 +7,9 @@ class BookmarksController < ApplicationController
 
 
   def create
-    raise
+    # raise 
     @movie = Movie.find(params["bookmark"]["movie_id"].to_i)
+    @movies = Movie.all
     @bookmark = Bookmark.new(build_bookmark)
     @bookmark.list = @list
     if @bookmark.save
