@@ -49,26 +49,39 @@
         </div>
       </div>    
   </div>
-  <%= form_for [@list, @bookmark] do |f| %>
-    <%= f.label :comment%>
-    <%= f.text_field :comment, class: "form-control"  %>
-    <div class="row">
-      <% @movies.each do |movie| %>
-        <div class="col-auto mx-auto">
-          <label class="movie-card-label">
-            <%= f.radio_button :movie_id, movie.id %>
-            <div class="new-movie-card shadow">
-              <%= image_tag movie.poster_url, alt: "", class: "new-movie-card" %>
-              <p  lang="de" class="text-light">
-                <%= movie.title %>
-              </p>
+  <%# Adding dropdown effect %>
+  <div class="form-click-box shadow mx-5 mb-5 ">
+    <div class="new-movie-form">
+      <%# Put in your form here. %>
+      <%= form_for [@list, @bookmark] do |f| %>
+        <%= f.label :comment%>
+        <%= f.text_field :comment, class: "form-control"  %>
+        <%= f.submit "Add a bookmark", class: "btn btn-primary btn-lg btn-block"%>
+        <div class="row">
+          <% @movies.each do |movie| %>
+            <div class="col-auto mx-auto">
+              <label class="movie-card-label">
+                <%= f.radio_button :movie_id, movie.id %>
+                <div class="new-movie-card shadow">
+                  <%= image_tag movie.poster_url, alt: "", class: "new-movie-card" %>
+                  <p  lang="de" class="text-light">
+                    <%= movie.title %>
+                  </p>
+                </div>
+              </label>
             </div>
-          </label>
-        </div>
+          <% end %>
+        </div>       
       <% end %>
+      <%# end of form %>
     </div>
-    
-    
-    <%= f.submit "Add a bookmark", class: "btn btn-primary btn-lg btn-block"%>
-  <% end %>
+    <div class="text-center arrow" data-action="show">
+      <i class="fas fa-angle-double-down"></i>
+    </div>
+  </div>
+
+
+
+
+  
 </div>
