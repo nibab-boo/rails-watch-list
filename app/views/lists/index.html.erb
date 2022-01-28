@@ -5,9 +5,9 @@
 </div>
 <div class="container">
   <h3 class="text-center text-muted mt-3">Our Movie Lists</h3>
-  <div class="row">
+  <div class="justify-content-between row row-cols-1 row-cols-sm-2 row-cols-md-3">
     <% @lists.each do |list| %>
-      <div class="col-6 col-md-4  my-5">
+      <div class="col my-5">
         <div class="card border border-0 bg-transparent" style="width: 18rem;">
           <div class="image-box">
             <% unless list.movies.empty? %>
