@@ -9,9 +9,22 @@ require 'open-uri'
 Bookmark.destroy_all
 Movie.destroy_all
 List.destroy_all
+User.destroy_all
 
 puts "seeding"
 movies = []
+users = []
+
+users << User.create!(
+  email: "babin1@gmail.com",
+  password: "123456"
+)
+users << User.create!(
+  email: "bohora1@gmail.com",
+  password: "123456"
+)
+
+p users
 
 url = "http://tmdb.lewagon.com/movie/top_rated"
 user_serialized = URI.open(url).read
@@ -28,6 +41,7 @@ n = 1
 5.times do 
   list = List.new(
     name: Faker::Name.first_name,
+    user: users.sample
     )
     file = URI.open("https://picsum.photos/500/300?random=#{n}")
   list.photo.attach(io: file, filename: 'movie.png', content_type: 'image/png');
