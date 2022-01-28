@@ -4,8 +4,9 @@ class MoviesController < ApplicationController
   before_action :find_movie, only: [:destroy]
   
   def index
-    @movies = Movie.order(id: :desc)
+    # @movies = Movie.order(id: :desc)
     @movie = Movie.new
+    @movies = policy_scope(Movie).order(id: :desc)
   end
 
   def new
@@ -21,6 +22,8 @@ class MoviesController < ApplicationController
       rating: data["imdbRating"],
       poster_url: data["Poster"]
     )
+    # raise
+    authorize @movie
     if @movie.save
       redirect_to movies_path
     else
@@ -28,9 +31,7 @@ class MoviesController < ApplicationController
     end
   end
 
-  def destroy
-
-  end
+  def destroy; end
  
   private
 
