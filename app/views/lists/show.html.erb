@@ -3,9 +3,11 @@
     <%#= link_to list_path(@list), method: :delete, data: { confirm: "Hey hey, stop right here! You might not want to do this." }, class: "poster-trash text-light h4" do  %>
       <%# <i class="fa fa-trash" aria-hidden="true"></i> %>
     <%# end %>
-    <span id="poster-bin">
-      <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, list_path(@list), class: "h2 text-success", method: :delete, data: { confirm: "Are you sure about it?" }  %>
-    </span>
+  <% if policy(@list).destroy?%>
+      <span id="poster-bin">
+        <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, list_path(@list), class: "h2 text-success", method: :delete, data: { confirm: "Are you sure about it?" }  %>
+      </span>
+    <% end %>
     <% if @list.photo.attached? %>
       <%= cl_image_tag @list.photo.key, alt: "image", class: "card-img-top image" %>
     <% else %>
