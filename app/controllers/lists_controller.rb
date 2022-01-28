@@ -12,7 +12,6 @@ class ListsController < ApplicationController
     @bookmark = Bookmark.new
     @movies = Movie.all
     @still_movies = @list.non_existence_movies
-    # authorize @
   end
 
   def new

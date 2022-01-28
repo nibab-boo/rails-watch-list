@@ -51,7 +51,7 @@
         </div>   %>  
   </div>
   <%# Adding dropdown effect %>
-  <% if user_signed_in? %>
+  <% if policy(@list).edit? %>
   <div class="form-click-box shadow mx-5 mb-5 ">
     <h4 class="text-center text-muted"><strong>Wanna add something. Be my guest.</strong></h4>
     <div class="new-movie-form">

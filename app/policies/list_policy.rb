@@ -8,4 +8,12 @@ class ListPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def create?
+    !!user
+  end
+
+  def edit?
+    user == record.user
+  end
 end
