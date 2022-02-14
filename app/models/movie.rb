@@ -1,7 +1,7 @@
 class Movie < ApplicationRecord
   has_many :bookmarks
   validates_uniqueness_of :title, :overview
-  validates_presence_of :title, :overview, :poster_url, :rating
+  validates_presence_of :title, :poster_url, :rating
 
   before_destroy :should_not_destroy
 

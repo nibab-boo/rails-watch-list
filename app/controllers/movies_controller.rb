@@ -13,8 +13,7 @@ class MoviesController < ApplicationController
   end
 
   def create
-    url = "http://www.omdbapi.com/?t=#{params[:movie][:title]}&apikey=bfd83e6e"
-    # https://imdb-api.com/API/SearchMovie/k_j2w9qy6i/
+    url = "http://www.omdbapi.com/?i=#{params[:movie][:id]}&apikey=bfd83e6e"
     response = URI.open(url).read
     data = JSON.parse(response)
     @movie = Movie.new(
@@ -24,15 +23,19 @@ class MoviesController < ApplicationController
       poster_url: data["Poster"]
     )
     # raise
+    @movies = Movie.all
     authorize @movie
     if @movie.save
       # raise
       respond_to do |format|
         format.html { redirect_to movies_path }
-        format.text { render partial: 'movies/flip_card.html.erb', locals: { movie: @movie }, formats: [:html] }
+        format.js 
       end
     else
-      render :index
+      respond_to do |format|
+        format.html { render :index }
+        format.js
+      end
     end
   end
 

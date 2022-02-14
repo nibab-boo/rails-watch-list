@@ -1,8 +1,8 @@
 <div class="container my-3 py-2 ">
   <div data-controller="add-movie">
     <%# render for form with animation %>
-    <%= render 'movie_new_form' %>
-    <h4 class="text-center my-5"><strong>Our Movies Collection</strong></h4>    
+    <%= render 'movie_new_form', movie: @movie %>
+    <h4 class="text-center mx-5"><strong>Our Movies Collection</strong></h4>    
     <div class="row justify-content-center mb-5" data-add-movie-target="list">
       <% @movies.each do |movie| %>
           <%# render for flip-card %>
