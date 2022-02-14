@@ -1,9 +1,9 @@
-<div class="form-click-box shadow mx-5 mb-5 ">
+ <div class="form-click-box shadow mx-5 mb-5 ">
   <div class="new-movie-form">
-    <%= simple_form_for(@movie) do |f| %>
+    <%= simple_form_for(@movie, remote: true,  html: {data: { add_movie_target: "form"}}) do |f| %>
         <h5 class="text-center my-2"><strong>Have something on mind!Feel free</strong></h5>    
-        <%= f.input :title %>
-        <%= f.submit 'Search and Add', class: "btn btn-primary" %>
+        <%= f.input :title, input_html: { "data-add-movie-target": "input" } %>
+        <%= f.submit 'Search and Add', class: "btn btn-primary", data: {add_movie_target: "submit",action: 'click->add-movie#update' } %>
     <% end %>
   </div>
   <div class="text-center arrow" data-action="show">

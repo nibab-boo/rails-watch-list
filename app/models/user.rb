@@ -5,5 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :lists
+
+  def user_name
+    arr_output = email.match(/(\w+)@/)
+    arr_output[1]
+  end
 end
     

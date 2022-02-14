@@ -1,13 +1,13 @@
-<div class="container my-3 py-2">
-  <%# render for form with animation %>
-  <%= render 'movie_new_form' %>
-  <h4 class="text-center my-5"><strong>Our Movies Collection</strong></h4>    
-  <div class="row justify-content-center mb-5">
-    <% @movies.each do |movie| %>
-      <div class="col-auto px-0">
-        <%# render for flip-card %>
-        <%= render 'flip_card', movie: movie %>    
-      </div>
-    <% end %>
+<div class="container my-3 py-2 ">
+  <div data-controller="add-movie">
+    <%# render for form with animation %>
+    <%= render 'movie_new_form' %>
+    <h4 class="text-center my-5"><strong>Our Movies Collection</strong></h4>    
+    <div class="row justify-content-center mb-5" data-add-movie-target="list">
+      <% @movies.each do |movie| %>
+          <%# render for flip-card %>
+          <%= render 'flip_card', movie: movie %>    
+      <% end %>
+    </div>
   </div>
 </div>

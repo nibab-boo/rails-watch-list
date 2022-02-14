@@ -45,7 +45,7 @@ n = 1
     )
     file = URI.open("https://picsum.photos/500/300?random=#{n}")
   list.photo.attach(io: file, filename: 'movie.png', content_type: 'image/png');
-  (0...4).to_a.each do |x|
+  (0...4).to_a.each do |x|+
     book = Bookmark.new(
       comment: Faker::Movies::BackToTheFuture.quote,
       movie: movies.sample,
