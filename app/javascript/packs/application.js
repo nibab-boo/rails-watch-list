@@ -44,7 +44,7 @@ document.addEventListener('turbolinks:load', () => {
     bannerTyper();
   }
 
-  const flipCards = document.querySelectorAll(".flip-card") 
+  const flipCards = document.querySelector(".flip-card") 
   if (flipCards) {
     flipCardClick();
   }

@@ -27,6 +27,8 @@ export default class extends Controller {
   new(e) {
     console.log(e)
   }
+
+  
   
   update(e) {
     e.preventDefault();

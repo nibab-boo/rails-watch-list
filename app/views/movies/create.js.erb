@@ -7,10 +7,14 @@ document.querySelector(".btn.btn-primary.my-3.btn-block").style.display = "none"
 <% if @movie.persisted? %>
   <%# adding flip card to list %>
   document.querySelector(".row.justify-content-center.mb-5").insertAdjacentHTML('afterbegin', "<%= j render 'movies/flip_card', movie: @movie %>");
+  document.querySelector(".row.justify-content-center.mb-5").firstElementChild.addEventListener('click', (event) => {
+    event.currentTarget.classList.toggle("flipped");
+  });
   <%# rendering the search-form %>
   document.querySelector(".search-form").outerHTML = "<%= j render 'movies/search_form', movie: Movie.new %>";
   <%# hiding the add-form %>
-  document.querySelector(".new_movie").style.display = "none";
+
+  
 <% else%>
   <%# rendering the search-form %>
   document.querySelector(".search-form").outerHTML = "<%= j render 'movies/search_form', movie: @movie %>";
