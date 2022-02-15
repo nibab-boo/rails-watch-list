@@ -51,6 +51,7 @@
   transform: rotateY(180deg);
   background-color: bisque;
   .flip-card-content {
+    cursor: default;
     padding: 16px;
     margin-bottom: 8px;
     overflow: hidden;

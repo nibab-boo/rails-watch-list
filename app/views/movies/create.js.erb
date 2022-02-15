@@ -12,9 +12,7 @@ document.querySelector(".btn.btn-primary.my-3.btn-block").style.display = "none"
   });
   <%# rendering the search-form %>
   document.querySelector(".search-form").outerHTML = "<%= j render 'movies/search_form', movie: Movie.new %>";
-  <%# hiding the add-form %>
-
-  
+  <%# hiding the add-form %>  
 <% else%>
   <%# rendering the search-form %>
   document.querySelector(".search-form").outerHTML = "<%= j render 'movies/search_form', movie: @movie %>";
