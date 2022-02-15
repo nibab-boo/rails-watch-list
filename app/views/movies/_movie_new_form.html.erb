@@ -1,12 +1,12 @@
- <div class="form-click-box shadow mx-5 mb-5 ">
+<div class="form-click-box shadow mx-5 mb-5 ">
   <div class="new-movie-form">
     <%= render 'search_form', movie: movie %>
+    <%= simple_form_for(movie, remote: true, class: "add-form") do %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <button class="btn btn-primary my-3 btn-block" data-add-movie-target="add" data-action="click->add-movie#new">Add</button>
+      <div class="row p-3" data-add-movie-target="cards" data-action="click->add-movie#add"></div>
+    <% end %>
   </div>
-  <%= simple_form_for(movie, remote: true, class: "add-form") do %>
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <button class="btn btn-primary my-3 btn-block" data-add-movie-target="add" data-action="click->add-movie#new">Add</button>
-    <div class="row p-3" data-add-movie-target="cards" data-action="click->add-movie#add:once"></div>
-  <% end %>
   <div class="text-center arrow" data-action="show">
     <i class="fas fa-angle-double-down"></i>
   </div>

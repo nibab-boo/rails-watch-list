@@ -1,12 +1,9 @@
 console.log("in js.erb");
 const form = document.querySelector(".search-form");
 form.style.display = 'block';
-document.querySelector("div[data-add-movie-target='add']").style.display = "none";
-console.log("going into persisted.");
+document.querySelector(".btn.btn-primary.my-3.btn-block").style.display = "none";
 <% if @movie.persisted? %>
-  document.querySelector("div[data-add-movie-target='list']").insertAdjacentHTML('afterbegin', "<%= j render 'movies/flip_card', movie: @movie %>");
-  console.log("data persisted.Should have added a @movie.")
+  document.querySelector(".row.justify-content-center.mb-5").insertAdjacentHTML('afterbegin', "<%= j render 'movies/flip_card', movie: @movie %>");
 <% else%>
-  document.querySelector(".simple_form.search-form").outerHTML = "<%= j render 'movies/flip_card', movie: @movie %>";  
-  console.log("data not persisted.Should have render form.")
+  document.querySelector(".simple_form.search-form").outerHTML = "<%= j render 'movies/search_form', movie: @movie %>";  
 <% end %>

@@ -49,6 +49,7 @@ export default class extends Controller {
           data.results.forEach((result) => {
             const info = `
             <div class="col-auto mx-auto">
+                <input type="hidden" name="movie[image]" value="${result.image}">
                 <label class="bookmark-card-label">
                     <input type="radio" name="movie[id]" value="${result.id}">
                     <div class="new-bookmark-card shadow">
