@@ -1,9 +1,17 @@
 console.log("in js.erb");
-const form = document.querySelector(".search-form");
-form.style.display = 'block';
+
+document.querySelector(".search-form").style.display = 'block';
 document.querySelector(".btn.btn-primary.my-3.btn-block").style.display = "none";
+
+
 <% if @movie.persisted? %>
+  <%# adding flip card to list %>
   document.querySelector(".row.justify-content-center.mb-5").insertAdjacentHTML('afterbegin', "<%= j render 'movies/flip_card', movie: @movie %>");
+  <%# rendering the search-form %>
+  document.querySelector(".search-form").outerHTML = "<%= j render 'movies/search_form', movie: Movie.new %>";
+  <%# hiding the add-form %>
+  document.querySelector("add-form").style.display = "none";
 <% else%>
-  document.querySelector(".simple_form.search-form").outerHTML = "<%= j render 'movies/search_form', movie: @movie %>";  
+  <%# rendering the search-form %>
+  document.querySelector(".search-form").outerHTML = "<%= j render 'movies/search_form', movie: @movie %>";
 <% end %>
