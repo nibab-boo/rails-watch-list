@@ -10,7 +10,7 @@ document.querySelector(".btn.btn-primary.my-3.btn-block").style.display = "none"
   <%# rendering the search-form %>
   document.querySelector(".search-form").outerHTML = "<%= j render 'movies/search_form', movie: Movie.new %>";
   <%# hiding the add-form %>
-  document.querySelector("add-form").style.display = "none";
+  document.querySelector(".new_movie").style.display = "none";
 <% else%>
   <%# rendering the search-form %>
   document.querySelector(".search-form").outerHTML = "<%= j render 'movies/search_form', movie: @movie %>";

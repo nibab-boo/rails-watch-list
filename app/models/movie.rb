@@ -1,6 +1,6 @@
 class Movie < ApplicationRecord
   has_many :bookmarks
-  validates_uniqueness_of :title, :overview
+  validates_uniqueness_of :title, scope: :overview, message: "Movie already exists."
   validates_presence_of :title, :poster_url, :rating
 
   before_destroy :should_not_destroy

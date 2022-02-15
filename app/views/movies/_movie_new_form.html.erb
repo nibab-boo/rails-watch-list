@@ -1,7 +1,7 @@
 <div class="form-click-box shadow mx-5 mb-5 ">
   <div class="new-movie-form">
     <%= render 'search_form', movie: movie %>
-    <%= simple_form_for(movie, remote: true, class: "add-form") do %>
+    <%= simple_form_for(movie, remote: true) do %>
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <button class="btn btn-primary my-3 btn-block" data-add-movie-target="add" data-action="click->add-movie#new">Add</button>
       <div class="row p-3" data-add-movie-target="cards" data-action="click->add-movie#add"></div>
