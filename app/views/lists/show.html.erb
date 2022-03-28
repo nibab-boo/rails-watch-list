@@ -3,7 +3,7 @@
     <%#= link_to list_path(@list), method: :delete, data: { confirm: "Hey hey, stop right here! You might not want to do this." }, class: "poster-trash text-light h4" do  %>
       <%# <i class="fa fa-trash" aria-hidden="true"></i> %>
     <%# end %>
-  <% if policy(@list).destroy?%>
+  <% if policy(@list).destroy? %>
       <span id="poster-bin">
         <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, list_path(@list), class: "h2 text-success", method: :delete, data: { confirm: "Are you sure about it?" }  %>
       </span>
@@ -37,9 +37,11 @@
             <h4><strong><%= link_to bookmark.movie.title, bookmark_path(bookmark) %></strong></h4>
             <p><%= bookmark.comment %></p>
           </div>  
-          <div>
-            <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, bookmark_path(bookmark), class: "trash text-danger", method: :delete, data: { confirm: "Are you sure about it?" }  %>
-          </div>
+          <% if policy(@list).edit? %>
+            <div>
+              <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, bookmark_path(bookmark), class: "trash text-danger", method: :delete, data: { confirm: "Are you sure about it?" }  %>
+            </div>
+          <% end %>
         </div>
       </div>    
     <% end %>
@@ -91,10 +93,5 @@
     </div>
   </div>
   <% end %>
-
-
-
-
-
-  
+ 
 </div>

@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
   before_action :find_list, except: [:destroy, :show]
 
+
   def show
     @bookmark = Bookmark.find(params[:id])
   end
@@ -13,6 +14,8 @@ class BookmarksController < ApplicationController
     @still_movies = @list.non_existence_movies
     @bookmark = Bookmark.new(build_bookmark)
     @bookmark.list = @list
+
+    authorize @bookmark
     if @bookmark.save
       redirect_to list_path(@list)
     else
@@ -22,8 +25,10 @@ class BookmarksController < ApplicationController
   
   def destroy
     @bookmark = Bookmark.find(params[:id])
+    authorize @bookmark
+    list = @bookmark.list
     @bookmark.destroy
-    redirect_to request.referer
+    redirect_to list_path(list)
   end
   private
 
